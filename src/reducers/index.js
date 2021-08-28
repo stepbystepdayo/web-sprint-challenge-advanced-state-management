@@ -3,6 +3,7 @@ import {
   SUCCESSFUL_SMURF_FETCH,
   FAILED_SMURF_FETCH,
   ADD_ERROR_INFO,
+  ADD_SMURF,
 } from "../actions";
 
 export const initialState = {
@@ -19,7 +20,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, loading: false, smurfs: action.payload };
     case FAILED_SMURF_FETCH:
       return { ...state, loading: false, errorMessage: action.payload };
-    case "ADD_SMURF":
+    case ADD_SMURF:
       return { ...state, smurfs: [...state.smurfs, action.payload] };
     case ADD_ERROR_INFO:
       return { ...state, errorMessage: action.payload };
